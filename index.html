@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KKM Healthy Eats</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #795548;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .cart a, .login-register a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cart a:hover, .login-register a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .slideshow {
+            overflow: hidden;
+            height: 300px;
+        }
+
+        .slideshow img {
+            width: 100%;
+            height: auto;
+            animation: slide 5s infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+
+        .sections {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        section {
+            padding: 20px;
+            background-color: #fff;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fade-in 1s ease-in;
+        }
+
+        @keyframes fade-in {
+            0% { opacity: 0; transform: translateY(-20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .product-carousel, .feedback-carousel {
+            overflow-x: auto;
+            display: flex;
+            gap: 20px;
+            padding-bottom: 10px;
+            scrollbar-width: thin;
+        }
+
+        .product-card, .feedback-card {
+            flex: 0 0 200px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            margin-right: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover, .feedback-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .product-image {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .product-title, .feedback-text {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .product-price {
+            color: #795548;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .cart-actions {
+            display: flex;
+            align-items: center;
+        }
+
+        .cart-actions button {
+            background-color: #795548;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        footer {
+            background-color: #795548;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            animation: slide-up 1s ease-in-out;
+        }
+
+        @keyframes slide-up {
+            0% { opacity: 0; transform: translateY(50px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .copyright {
+            margin-top: 10px;
+        }
+
+        .login-register {
+            padding: 5px 20px;
+            background-color: #ffcc80;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            text-align: center;
+            animation: pulse 1s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.05); }
+        }
+
+        .section-with-border {
+            border: 2px solid #795548;
+            padding: 20px;
+        }
+
+        .section-with-border h2 {
+            color: #795548;
+            margin-bottom: 15px;
+        }
+
+        .social-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <!-- Replace 'logo.png' with the path to your logo image -->
+            <img src="logo.png" alt="KKM Healthy Eats Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#shop">Shop</a></li>
+                <li><a href="#combos">Combos</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="login-register">
+            <!-- Add your login/register links here -->
+            <a href="#">Login / Register</a>
+        </div>
+        <div class="cart">
+            <!-- Add your cart icon or link here -->
+            <a href="#" class="cart-icon">Cart</a>
+        </div>
+    </header>
+
+    <section class="slideshow">
+        <!-- Add your slideshow with images here -->
+        <img src="https://via.placeholder.com/1200x300/795548/FFFFFF/?text=Slideshow+Image+1" alt="Slideshow Image 1">
+        <img src="https://via.placeholder.com/1200x300/795548/FFFFFF/?text=Slideshow+Image+2" alt="Slideshow Image 2">
+        <img src="https://via.placeholder.com/1200x300/795548/FFFFFF/?text=Slideshow+Image+3" alt="Slideshow Image 3">
+    </section>
+
+    <div class="sections">
+        <section id="shop" class="products">
+            <h2>Top Selling Products</h2>
+            <div class="product-carousel">
+                <!-- Sample product cards -->
+                <div class="product-card">
+                    <img src="sample_product1.jpg" alt="Product 1" class="product-image">
+                    <div class="product-title">Organic Brown Rice</div>
+                    <div class="product-price">Rs 120</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <!-- Add more product cards here -->
+                <div class="product-card">
+                    <img src="sample_product2.jpg" alt="Product 2" class="product-image">
+                    <div class="product-title">Quinoa</div>
+                    <div class="product-price">Rs 150</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product3.jpg" alt="Product 3" class="product-image">
+                    <div class="product-title">Chia Seeds</div>
+                    <div class="product-price">Rs 90</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product4.jpg" alt="Product 4" class="product-image">
+                    <div class="product-title">Almonds</div>
+                    <div class="product-price">Rs 200</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product5.jpg" alt="Product 5" class="product-image">
+                    <div class="product-title">Oats</div>
+                    <div class="product-price">Rs 80</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product6.jpg" alt="Product 6" class="product-image">
+                    <div class="product-title">Honey</div>
+                    <div class="product-price">Rs 150</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product7.jpg" alt="Product 7" class="product-image">
+                    <div class="product-title">Green Tea</div>
+                    <div class="product-price">Rs 100</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product8.jpg" alt="Product 8" class="product-image">
+                    <div class="product-title">Walnuts</div>
+                    <div class="product-price">Rs 180</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product9.jpg" alt="Product 9" class="product-image">
+                    <div class="product-title">Greek Yogurt</div>
+                    <div class="product-price">Rs 130</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <img src="sample_product10.jpg" alt="Product 10" class="product-image">
+                    <div class="product-title">Avocado Oil</div>
+                    <div class="product-price">Rs 250</div>
+                    <div class="cart-actions">
+                        <button>-</button>
+                        <span>0</span>
+                        <button>+</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="combos">
+            <h2>Combos</h2>
+            <div class="product-carousel">
+                <div class="product-carousel">
+                    <!-- Sample product cards -->
+                    <div class="product-card">
+                        <img src="sample_product1.jpg" alt="Product 1" class="product-image">
+                        <div class="product-title">Organic Brown Rice</div>
+                        <div class="product-price">Rs 120</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <!-- Add more product cards here -->
+                    <div class="product-card">
+                        <img src="sample_product2.jpg" alt="Product 2" class="product-image">
+                        <div class="product-title">Quinoa</div>
+                        <div class="product-price">Rs 150</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product3.jpg" alt="Product 3" class="product-image">
+                        <div class="product-title">Chia Seeds</div>
+                        <div class="product-price">Rs 90</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product4.jpg" alt="Product 4" class="product-image">
+                        <div class="product-title">Almonds</div>
+                        <div class="product-price">Rs 200</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product5.jpg" alt="Product 5" class="product-image">
+                        <div class="product-title">Oats</div>
+                        <div class="product-price">Rs 80</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product6.jpg" alt="Product 6" class="product-image">
+                        <div class="product-title">Honey</div>
+                        <div class="product-price">Rs 150</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product7.jpg" alt="Product 7" class="product-image">
+                        <div class="product-title">Green Tea</div>
+                        <div class="product-price">Rs 100</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product8.jpg" alt="Product 8" class="product-image">
+                        <div class="product-title">Walnuts</div>
+                        <div class="product-price">Rs 180</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product9.jpg" alt="Product 9" class="product-image">
+                        <div class="product-title">Greek Yogurt</div>
+                        <div class="product-price">Rs 130</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="sample_product10.jpg" alt="Product 10" class="product-image">
+                        <div class="product-title">Avocado Oil</div>
+                        <div class="product-price">Rs 250</div>
+                        <div class="cart-actions">
+                            <button>-</button>
+                            <span>0</span>
+                            <button>+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="feedback" class="section-with-border">
+            <h2>Customer Feedback</h2>
+            <div class="feedback-carousel">
+                <!-- Sample feedback cards -->
+                <div class="feedback-card">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quis turpis sit amet ipsum commodo vehicula.</p>
+                    <p>- Customer A</p>
+                </div>
+                <div class="feedback-card">
+                    <p>Nulla facilisi. Sed sagittis lorem et magna consequat convallis.</p>
+                    <p>- Customer B</p>
+                </div>
+                <div class="feedback-card">
+                    <p>Maecenas nec enim volutpat, feugiat ante et, tempus elit.</p>
+                    <p>- Customer C</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-with-border">
+            <h2>About Us</h2>
+            <p>We are a leading provider of healthy food options.</p>
+        </section>
+
+        <section id="contact" class="section-with-border">
+            <h2>Contact</h2>
+            <p>For inquiries, please contact us at info@example.com</p>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <!-- Replace 'logo.png' with the path to your logo image -->
+            <img src="logo.png" alt="KKM Healthy Eats Logo">
+        </div>
+        <div class="social-icons">
+            <!-- Social media icons -->
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="whatsapp.png" alt="WhatsApp"></a>
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+        </div>
+        <div class="contact-details">
+            <!-- Add your contact details here -->
+            <!-- Add Terms and Conditions, Refund & Return Policy here -->
+        </div>
+        <div class="copyright">
+            &copy; 2024, KKM Healthy Eats
+        </div>
+    </footer>
+</body>
+</html>
